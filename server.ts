@@ -507,18 +507,9 @@ app.post("/api/fast-code", async (req, res) => {
       }
     }
 
-    // 2. High-capability Open Neural Engines (Qwen-Coder 32B, DeepSeek, OpenAI GPT-4o)
+    // 2. High-capability Open Neural Engines (OpenAI / Open Reasoning)
     if (!generatedCode) {
-      const targetModels =
-        engine === "claude-3.5-sonnet"
-          ? ["qwen-coder", "deepseek", "openai", "mistral"]
-          : engine === "qwen-coder"
-          ? ["qwen-coder", "deepseek", "openai", "mistral"]
-          : engine === "deepseek-coder"
-          ? ["deepseek", "qwen-coder", "openai", "mistral"]
-          : engine === "gpt-4o"
-          ? ["openai", "qwen-coder", "deepseek", "mistral"]
-          : ["qwen-coder", "deepseek", "openai", "mistral"];
+      const targetModels = ["openai-fast", "openai"];
 
       for (const fModel of targetModels) {
         try {
