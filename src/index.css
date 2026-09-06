@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-gray-900 dark:bg-[#131314] dark:text-gray-100 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Ensure all elements fit gracefully in phones without horizontal blowout */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Markdown formatting with strict mobile containment */
+.prose {
+  max-width: 100% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.prose pre {
+  background-color: #1e1f20 !important;
+  color: #e5e7eb !important;
+  border-radius: 0.875rem;
+  padding: 0.875rem;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.prose code {
+  color: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  overflow-wrap: break-word;
+}
+
+.prose p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.prose ul, .prose ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Touch utility for hiding scrollbars on mobile pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

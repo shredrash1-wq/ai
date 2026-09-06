@@ -1,0 +1,6 @@
+{
+  "name": "Aetheris AI",
+  "description": "High-performance conversational intelligence and multimodal studio powered by AETHER BOT (BazaarLink LLM API), OpenAI ChatGPT, and Google Gemini.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
